@@ -61,8 +61,14 @@ def crop_image(image_path):
     # Instructions pour l'utilisateur
     print("Utilisez la souris pour sélectionner le rectangle de recadrage. Appuyez sur la touche 'c' puis 'q' pour terminer le recadrage.")
 
+            
+    # size = [200,300]
+    # fx = 0.5
+    # fy = 0.5 
+
     # Boucle principale
     while True:
+        # cv2.resize(image_copy, size,fx,fy)
         cv2.imshow("Cropping", image_copy)
         key = cv2.waitKey(1) & 0xFF
 
