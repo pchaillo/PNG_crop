@@ -12,4 +12,6 @@ python3 process_png
 Python libraries 
 ```console
 pip3 install opencv-python
+pip3 install Pillow
+
 ```
