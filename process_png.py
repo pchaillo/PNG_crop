@@ -23,10 +23,10 @@ for i in liste :
         u = source_folder + '/' + i
         crop_image = ci.crop_image(u)
         if RECORD_JPG :
-                record_path = destination_folder + '/' + i
+                record_path = destination_folder + '/jpg/' + i
                 cv2.imwrite(record_path, crop_image)
         if RECORD_PDF :
-                record_path_pdf = destination_folder + '/' + p_c.set_extension(string = i, extension = ".pdf")
+                record_path_pdf = destination_folder + '/pdf/' + p_c.set_extension(string = i, extension = ".pdf")
                 p_c.record_pdf(image_path = record_path,pdf_path = record_path_pdf)
 
 
