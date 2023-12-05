@@ -1,4 +1,6 @@
 # from fpdf import FPDF # librairie nulle ?
+from PIL import Image
+
 
 def get_extension(string):
     length = len(string)
@@ -12,11 +14,16 @@ def set_extension(string,extension):
     string_out = raw_string + extension
     return string_out
 
-def record_pdf(image,pdf_path):
-    pdf = FPDF() 
-    pdf.add_page()
-    pdf.image(image,0,0,100,200)
-    pdf.output("pdf_path", "F")
+def record_pdf(image_path,pdf_path):
+    # pdf = FPDF() # library nulle ?
+    # pdf.add_page()
+    # pdf.image(image,0,0,100,200)
+    # pdf.output("pdf_path", "F")
+    image = Image.open(image_path)
+    image.save(
+    pdf_path, "PDF" ,resolution=100.0)
+    
+
 
 
 
