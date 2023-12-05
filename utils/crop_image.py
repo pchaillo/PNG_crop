@@ -67,10 +67,11 @@ def crop_image(image_path):
 
     # print(type(height/2),width)
     # TODO : définir la taille de la feêtre de manière + intelligente
+    facteur = 3 # facteur qui dépende de la taille de l'image ?
 
     # Boucle principale
     while True:
-        image_copy = cv2.resize(image_copy, (int(width/2.0), int(height/2.0) )  )       
+        image_copy = cv2.resize(image_copy, (int(width/facteur), int(height/facteur) )  )       
         # cv2.resize(image_copy, size,fx,fy)
         cv2.imshow("Cropping", image_copy)
         key = cv2.waitKey(1) & 0xFF
@@ -88,7 +89,12 @@ def crop_image(image_path):
     x_min, y_min = min(start_x, end_x), min(start_y, end_y)
     x_max, y_max = max(start_x, end_x), max(start_y, end_y)
 
-    return image_copy[x_min:x_max,y_min:y_max]
+    y_min_f = x_min
+    y_max_f = x_max
+    x_max = y_max
+    x_min = y_min
+
+    return image[x_min*facteur:x_max*facteur,y_min_f*facteur:y_max_f*facteur]
 
     # # Filtrage du nuage de points 
     # bottom_left_corner = (y_min-1)*h + x_min
