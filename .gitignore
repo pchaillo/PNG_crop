@@ -1,0 +1,16 @@
+﻿
+*.jpg
+*.png
+
+# to not upload images
+
+
+# *.csv
+
+# /csv files/*.csv
+
+# /test.txt
+
+# /test2.txt
+
+# /test3.txt
