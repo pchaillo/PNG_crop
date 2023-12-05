@@ -1,6 +1,8 @@
 ﻿
 *.jpg
 *.png
+*.pdf
+*.pyc
 
 # to not upload images
 
