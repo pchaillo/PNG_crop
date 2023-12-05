@@ -62,14 +62,15 @@ def crop_image(image_path):
     print("Utilisez la souris pour sélectionner le rectangle de recadrage. Appuyez sur la touche 'c' puis 'q' pour terminer le recadrage.")
 
             
-    # height = image_copy.shape[0]
-    # width = image_copy.shape[1]
+    height = image_copy.shape[0]
+    width = image_copy.shape[1]
 
-    # print(height,width)
+    # print(type(height/2),width)
+    # TODO : définir la taille de la feêtre de manière + intelligente
 
     # Boucle principale
     while True:
-        # image_copy = cv2.resize(image_copy, (width/2.0, height/2.0))         
+        image_copy = cv2.resize(image_copy, (int(width/2.0), int(height/2.0) )  )       
         # cv2.resize(image_copy, size,fx,fy)
         cv2.imshow("Cropping", image_copy)
         key = cv2.waitKey(1) & 0xFF
@@ -87,7 +88,7 @@ def crop_image(image_path):
     x_min, y_min = min(start_x, end_x), min(start_y, end_y)
     x_max, y_max = max(start_x, end_x), max(start_y, end_y)
 
-    return image[x_min:x_max,y_min:y_max]
+    return image_copy[x_min:x_max,y_min:y_max]
 
     # # Filtrage du nuage de points 
     # bottom_left_corner = (y_min-1)*h + x_min
