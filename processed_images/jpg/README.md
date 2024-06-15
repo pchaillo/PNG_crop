@@ -1,0 +1,1 @@
+Pour avoir le dossier jpg par défaut
