@@ -50,7 +50,7 @@ def crop_image(image_path):
     image = cv2.imread(image_path)
     if image is None:
         print("Erreur: Impossible de charger l'image. Veuillez vérifier le chemin.")
-        return Nonec
+        return None
 
     image_copy = image.copy()
 
